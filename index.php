@@ -53,22 +53,45 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compartir archivos</title>
+    <title>Compartir Archivos</title>
     <script src="parametro.js"></script>
     <link rel="stylesheet" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #0730c5;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            color: #0540a4;
+            text-align: center;
+        }
+
         .drop-area {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 100%;
+            width: 90%;
+            max-width: 600px;
             height: 200px;
             border: 2px dashed #0730c5;
             border-radius: 20px;
             cursor: pointer;
             position: relative;
             text-align: center;
+            margin: 20px auto;
         }
 
         .file-input {
@@ -93,38 +116,37 @@ try {
             margin-top: 20px;
         }
 
-        .logo-pequeno {
-            margin-top: 10px;
-        }
-
-        .logo-pequeno img {
-            width: 50px;
-            height: 50px;
-        }
-
         .container2 {
             margin-top: 20px;
         }
 
         .archivos_subidos {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             margin-bottom: 10px;
             padding: 10px;
             border: 1px solid #0730c5;
             border-radius: 10px;
+            background-color: #f0f8ff;
+            width: 90%;
+            max-width: 600px;
+            margin: 10px auto;
         }
 
         .archivos_subidos a {
             text-decoration: none;
-            color: #0730c5;
+            color: #0540a4;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .btn_delete {
             background-color: transparent;
             border: none;
             cursor: pointer;
+            margin-left: 10px;
         }
 
         .btn_delete svg {
@@ -143,6 +165,7 @@ try {
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: 500;
         }
 
         .link-container button:hover {
@@ -155,11 +178,70 @@ try {
             font-size: 14px;
             color: #666;
         }
+
+        .beta {
+            font-size: 0.6em;
+            background-color: #0730c5;
+            color: white;
+            padding: 3px 7px;
+            border-radius: 5px;
+            vertical-align: super;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .drop-area {
+                height: 150px;
+                font-size: 16px;
+            }
+
+            .archivos_subidos {
+                width: 95%;
+                padding: 5px;
+            }
+
+            .archivos_subidos a {
+                font-size: 14px;
+            }
+
+            .link-container button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            .drop-area {
+                height: 120px;
+                font-size: 14px;
+            }
+
+            .archivos_subidos {
+                padding: 5px;
+            }
+
+            .archivos_subidos a {
+                font-size: 12px;
+            }
+
+            .link-container button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <h1>Compartir archivos Datnne <sup class="beta">BETA</sup></h1>
+    <h1>Compartir Archivos<sup class="beta">BETA</sup></h1>
     <div class="content">
         <h3>Sube tus archivos y comparte este enlace temporal: <span>datnne.online/?-=<?php echo htmlspecialchars($carpetaNombreCorta); ?></span></h3>
         <div class="link-container">
@@ -219,7 +301,7 @@ try {
     </div>
 
     <div class="credits">
-        <p> ©Copyright Hervias Dat 2024</p>
+        <p>© Copyright Hervias Dat 2024</p>
     </div>
 
     <script>
