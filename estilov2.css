@@ -1,0 +1,210 @@
+/* Importación de fuente */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* Reset de estilo base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo del body */
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4d004d; /* Texto púrpura oscuro */
+  text-align: center;
+  padding: 20px;
+  background-color: #f9e0e6; /* Fondo rosa claro */
+}
+
+/* Animación de fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #fce4ec, #f3e5f5, #f8bbd0);
+  animation: animateBackground 15s linear infinite alternate;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Contenedor principal */
+.content {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  max-width: 600px; /* Ajuste del ancho máximo */
+  margin: 20px auto; /* Centrado del contenedor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+}
+
+/* Estilo de los encabezados */
+h1 {
+  font-weight: 600;
+  font-size: 32px;
+  margin: 20px 0;
+  color: #a64d79; /* Color lila */
+  letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+/* Estilo del contenedor flex */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Estilo de las áreas de contenido */
+.drop-area,
+.container2 {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px;
+  padding: 20px;
+  transition: transform 0.2s ease-in-out; /* Animación de escala */
+  background-color: #f3e5f5; /* Fondo lila claro */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Efecto hover para las áreas de contenido */
+.drop-area:hover,
+.container2:hover {
+  transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Estilo específico para drop-area */
+.drop-area {
+  border: 2px dashed #cc6699; /* Borde rosa */
+  padding: 30px; /* Espaciado adicional para el área de arrastre */
+  display: flex; /* Usar flexbox para centrar el contenido */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  position: relative; /* Para ajuste de posición del contenido */
+}
+
+/* Estilo del input file dentro de drop-area */
+.drop-area input[type="file"] {
+  position: absolute; /* Posición absoluta dentro del contenedor */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Ancho completo del contenedor */
+  padding: 20px; /* Mayor espaciado interno */
+  margin: 8px; /* Márgenes para ajustar el espaciado externo */
+  border: 2px solid #cc6699; /* Borde rosa más grueso */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f3e5f5; /* Fondo lila claro */
+  color: #4d004d; /* Color de texto */
+  font-size: 18px; /* Tamaño de la fuente más grande */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  box-sizing: border-box; /* Incluir relleno y borde en el tamaño total */
+}
+
+/* Estilo de los enlaces */
+a {
+  color: #cc6699; /* Color de los enlaces en rosa */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease-in-out; /* Transición del color */
+}
+
+a:hover {
+  color: #ff99cc; /* Color de los enlaces al pasar el mouse */
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Estilo de los botones */
+button {
+  background-color: #e6b3cc; /* Fondo del botón en tono lila claro */
+  border: none; /* Sin borde */
+  color: #ffffff; /* Texto blanco */
+  padding: 12px 24px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de la fuente */
+  margin: 10px 0; /* Márgenes */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  border-radius: 12px; /* Bordes redondeados */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Transiciones */
+  display: inline-block; /* Mostrar como bloque en línea */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+button:hover {
+  background-color: #d98cb3; /* Fondo del botón al pasar el mouse */
+  transform: translateY(-3px); /* Efecto de elevación */
+}
+
+/* Estilo para formularios */
+input[type="text"], input[type="email"], textarea {
+  width: 100%; /* Ancho completo */
+  padding: 12px 20px; /* Espaciado interno */
+  margin: 8px 0; /* Márgenes */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 4px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluir relleno y borde en el tamaño total */
+  background-color: #f9f2f4; /* Fondo lila claro */
+  color: #4d004d; /* Color de texto */
+  font-family: inherit; /* Heredar la fuente */
+}
+
+input[type="submit"] {
+  background-color: #cc6699; /* Fondo del botón de enviar */
+  color: white; /* Texto blanco */
+  padding: 14px 20px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Transiciones */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+input[type="submit"]:hover {
+  background-color: #b35986; /* Fondo del botón al pasar el mouse */
+  transform: translateY(-3px); /* Efecto de elevación */
+}
+
+/* Estilo base para el formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; /* Ajuste del ancho máximo del formulario */
+  margin: 20px auto; /* Centrado del formulario */
+}
+
+/* Adaptaciones para dispositivos móviles */
+@media (max-width: 768px) {
+  .content {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .drop-area,
+  .container2 {
+    width: 90%; /* Reducir el ancho en pantallas más pequeñas */
+    max-width: none; /* Restablecer el ancho máximo */
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  form {
+    padding: 0 10px;
+  }
+}
